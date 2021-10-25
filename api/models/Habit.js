@@ -1,5 +1,7 @@
 const db = require('../dbConfig');
 
+const Log = require('./Log');
+
 class Habit {
     constructor(data) {
         this.id = data.id;
@@ -26,7 +28,10 @@ class Habit {
     static findHabitById(id) {
         return new Promise(async (resolve, reject) => {
             try {
-                let data = await db.query(`SELECT * FROM habits WHERE id=$1;`, [ id ]);
+                let data = await db.query(`SELECT habits.*
+                                            FROM habits
+                                            JOIN users ON habits.user_id = users.id
+                                            WHERE habits.id = $1;`, [id]);
                 let habit = new Habit(data.rows[0]);
                 resolve(habit);
             }
@@ -54,19 +59,35 @@ class Habit {
         });
     };
 
+    //update
+    update(data) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const habitName = data.habit_name;
+                const updatedHabitData = await db.query(`UPDATE habits SET habit_name = $1 WHERE id = $2;`, [habitName, this.id]);
+                let updatedHabit = new Habit({ ...updatedHabitData.rows[0] });
+                resolve(updatedHabit);
+            }
+            catch (err) {
+                reject(`Habit ${this.id} could not be updated`);
+            };
+        });
+    };
+
     //destroy
     destroy() {
         return new Promise(async (resolve, reject) => {
             try {
                 const habit = await db.query(`DELETE FROM habits WHERE id=$1 RETURNING id;`, [ this.id ]);
-                resolve(habit);
+                const logs = await db.query(`DELETE FROM logs WHERE habit_id = $1 RETURNING habit_id;`, [this.id]);
+                resolve(`Habit ${this.id} successfully deleted`);
             }
             catch(err) {
                 reject(`Habit could not be deleted.`);
             };
         });
     };
-}
+};
 
 module.exports = Habit;
 

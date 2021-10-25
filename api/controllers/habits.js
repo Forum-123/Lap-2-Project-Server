@@ -33,6 +33,19 @@ async function create(req, res) {
     };
 };
 
+//update
+async function update(req, res) {
+    try {
+        const habit = await Habit.findHabitById(parseInt(req.params.id));
+        console.log(habit);
+        const updatedHabit = await habit.update(req.body);
+        res.status(204).json(updatedHabit);
+    }
+    catch (err) {
+        res.status(400).json(err);
+    };
+};
+
 //delete
 async function destroy(req, res) {
     try {
@@ -45,4 +58,4 @@ async function destroy(req, res) {
     };
 };
 
-module.exports = {index, show, create, destroy};
+module.exports = { index, show, create, update, destroy };
