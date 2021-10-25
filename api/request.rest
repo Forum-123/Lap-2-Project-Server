@@ -2,7 +2,7 @@ GET http://localhost:3000/habits
 
 ###
 
-GET http://localhost:3000/habits/3
+GET http://localhost:5000/habits/1
 
 ###
 
