@@ -1,5 +1,7 @@
 services:
   api:
+    working_dir: /tests
+    image: node:12.18.4
     container_name: habit_test_api
     environment: 
       - PGUSER=habit
@@ -8,16 +10,23 @@ services:
       - PGDATABASE=habittrackertest
       - PGPORT=5432
       - NODE_ENV=test
+    volumes:
+      - type: bind
+        source: ./api
+        target: /tests
     depends_on:
       - db
     tty: true
   db:
+    image: postgres:latest
     container_name: habit_test_db
     volumes:
       - "test_db:/var/lib/postgresql/data"
+      - "./db:/docker-entrypoint-initdb.d/:ro"
     environment: 
       - POSTGRES_DB=habittrackertest
       - POSTGRES_PASSWORD=habitpass
+      - POSTGRES_USER=habit
 volumes:
   test_db:
 networks: 
