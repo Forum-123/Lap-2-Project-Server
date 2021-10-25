@@ -41,7 +41,9 @@ class Habit {
     static create(data) {
         return new Promise(async (resolve, reject) => {
             try {
-                const {habitName, habitFrequency, userId} = data; //change to habit_name if doesn't work //need to locate userId from the client side
+                const habitName = data.habit_name;
+                const habitFrequency = data.habit_frequency;
+                const userId = data.user_id; //need to locate userId from the client side
                 let newHabitData = await db.query(`INSERT INTO habits (habit_name, habit_frequency, user_id) VALUES ($1, $2, $3) RETURNING *;`, [habitName, habitFrequency, userId]);
                 let newHabit = new Habit({...newHabitData.rows[0]});
                 resolve(newHabit);
@@ -53,12 +55,11 @@ class Habit {
     };
 
     //destroy
-    static destroy() {
+    destroy() {
         return new Promise(async (resolve, reject) => {
             try {
-                await db.query(`DELETE FROM habits WHERE id=$1;`, [ this.id ]);
-                let habits = await Habit.all;
-                resolve(habits);
+                const habit = await db.query(`DELETE FROM habits WHERE id=$1 RETURNING id;`, [ this.id ]);
+                resolve(habit);
             }
             catch(err) {
                 reject(`Habit could not be deleted.`);
