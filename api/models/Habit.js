@@ -57,7 +57,7 @@ class Habit {
         return new Promise(async (resolve, reject) => {
             try {
                 await db.query(`DELETE FROM habits WHERE id=$1;`, [ this.id ]);
-                let habits = await Habit.all(); //get rid of brackets?
+                let habits = await Habit.all;
                 resolve(habits);
             }
             catch(err) {
