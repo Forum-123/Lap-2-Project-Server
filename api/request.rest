@@ -1,4 +1,8 @@
-GET http://localhost:3000/habits/2
+GET http://localhost:3000/habits
+
+###
+
+GET http://localhost:3000/habits/3
 
 ###
 
@@ -13,5 +17,22 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/habits/2 HTTP/1.1
+PUT http://localhost:3000/habits/2 HTTP/1.1
 content-type: application/json
+
+{
+    "habit_name": "Meditate"
+}
+
+###
+
+DELETE http://localhost:3000/habits/1 HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:3000/logs
+
+###
+
+GET http://localhost:3000/logs/1
