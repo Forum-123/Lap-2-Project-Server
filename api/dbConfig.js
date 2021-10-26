@@ -1,8 +1,8 @@
 const fs = require("fs");
 const { Pool } = require('pg');
 
-const setup = fs.readFileSync(__dirname + '/db/1_setup.sql').toString();
-const seed = fs.readFileSync(__dirname + '/db/2_seed.sql').toString();
+const setup = fs.readFileSync(__dirname + '../db/1_setup.sql').toString();
+const seed = fs.readFileSync(__dirname + '../db/2_seed.sql').toString();
 
 const resetDB = () => {
     return new Promise(async (resolve, reject) => {
