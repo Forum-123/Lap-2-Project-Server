@@ -1,4 +1,4 @@
-const db = require('../dbConfig/init');
+const db = require('../dbConfig/seedDev');
 const Habit = require('./Habit');
 
 class Log {
