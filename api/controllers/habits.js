@@ -1,3 +1,4 @@
+const { restart } = require('nodemon');
 const Habit = require('../models/Habit');
 
 //index
@@ -21,6 +22,16 @@ async function show(req, res) {
         res.status(404).json(err);
     };
 };
+
+async function showByUser(req, res) {
+    try {
+        const habits = await Habit.findHabitsByUserId(parseInt(req.params.id));
+        res.json(habits);
+    }
+    catch(err) {
+        res.status(404).json(err);
+    }
+}
 
 //create
 async function create(req, res) {
@@ -58,4 +69,4 @@ async function destroy(req, res) {
     };
 };
 
-module.exports = { index, show, create, update, destroy };
+module.exports = { index, show, showByUser, create, update, destroy };
