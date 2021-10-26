@@ -4,6 +4,7 @@ const Habit = require('../models/Habit');
 async function index(req, res) {
     try {
         const habits = await Habit.all;
+        console.log(habits)
         res.json(habits);
     }
     catch(err) {

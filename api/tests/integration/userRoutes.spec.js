@@ -42,7 +42,6 @@ describe('users endpoints', () => {
                 email: 'jeff@email.com',
                 password: 'qualitypassword'
             })
-            console.log(login)
         expect(login.statusCode).toEqual(200);
         expect(login.body).toHaveProperty('token');
     });
