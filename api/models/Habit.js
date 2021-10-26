@@ -41,6 +41,19 @@ class Habit {
         });
     };
 
+    static findHabitsByUserId(id) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                let data = await db.query(`SELECT * FROM habits WHERE user_id=$1;`, [ id ]);
+                let habits = data.rows.map(h => new Habit(h));
+                resolve(habits);
+            }
+            catch(err) {
+                reject(`Habits not found for user ${id}.`);
+            }
+        })
+    }
+
 
     //create
     static create(data) {
