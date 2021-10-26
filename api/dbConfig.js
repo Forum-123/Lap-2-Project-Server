@@ -1,15 +1,15 @@
 const fs = require("fs");
 const { Pool } = require('pg');
 
-const setup = fs.readFileSync(__dirname + './db/1_setup.sql').toString();
-const seed = fs.readFileSync(__dirname + './db/2_seed.sql').toString();
+const setup = fs.readFileSync(__dirname + '/db/1_setup.sql').toString();
+const seed = fs.readFileSync(__dirname + '/db/2_seed.sql').toString();
 
 const resetDB = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            const db = new Pool();
-            await db.query(setup);
-            await db.query(seed);
+            const pool = new Pool();
+            await pool.query(setup);
+            await pool.query(seed);
             resolve('Habit Tracker DB reset');
         } catch (err) {
             reject(`Habit Tracker DB could not be reset: ${err} in ${err.file}`);
@@ -17,4 +17,4 @@ const resetDB = () => {
     });
 }
 
-module.exports = { db, resetDB };
+module.exports = resetDB;
