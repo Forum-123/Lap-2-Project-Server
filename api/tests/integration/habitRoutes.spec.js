@@ -1,3 +1,5 @@
+//const { request } = require("../../server");
+
 describe('habits endpoints', () => {
     let api;
     beforeEach(async () => {
@@ -6,6 +8,7 @@ describe('habits endpoints', () => {
 
     beforeAll(async () => {
         api = app.listen(5000, () => console.log('Test server running on port 5000'))
+        await resetTestDB()
     });
 
     afterAll(async () => {
@@ -25,4 +28,37 @@ describe('habits endpoints', () => {
         expect(res.body.habitName).toEqual('Test habit 1');
     });
 
+    it('should create a new habit', async () => {
+        const res = await request(api)
+            .post('/habits')
+            .send({
+                habit_name: 'Sleep 8 hours',
+                habit_frequency: 'Daily',
+                user_id: 4
+            })
+        expect(res.statusCode).toEqual(201);
+        expect(res.body).toHaveProperty("habitName");
+        expect(res.body.habitName).toEqual('Sleep 8 hours')
+    });
+
+    it('should update a habit', async () => {
+        const res = await request(api)
+            .put('/habits/3')
+            .send({
+                habit_name: 'Updated habit'
+            })
+        expect(res.statusCode).toEqual(204);
+        const updateCheck = await request(api).get('/habits/3');
+        expect(updateCheck.body.habitName).toEqual('Updated habit');
+    });
+
+    it('should delete a habit', async () => {
+        const res = await request(api)
+            .delete('/habits/1')
+        expect(res.statusCode).toEqual(204);
+
+        const habitRes = await request(api).get('/habits/1');
+        expect(habitRes.statusCode).toEqual(404);
+        expect(habitRes.body).toEqual('Habit 1 not found.')
+    })
 });
