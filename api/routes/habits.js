@@ -6,6 +6,8 @@ router.get('/', habitsController.index);
 
 router.get('/:id', habitsController.show);
 
+router.get('/user/:id', habitsController.showByUser)
+
 router.post('/', habitsController.create);
 
 router.put('/:id', habitsController.update);
