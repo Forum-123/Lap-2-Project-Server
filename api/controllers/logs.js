@@ -23,6 +23,16 @@ async function show(req, res) {
     };
 };
 
+async function showByHabit(req, res) {
+    try {
+        const logs = await Log.getLogsByHabitId(parseInt(req.params.id));
+        res.json(logs);
+    }
+    catch(err) {
+        res.status(404).json(err);
+    }
+}
+
 //create
 async function create(req, res) {
     try {
@@ -34,4 +44,4 @@ async function create(req, res) {
     };
 };
 
-module.exports = { index, show, create };
+module.exports = { index, show, showByHabit, create };
