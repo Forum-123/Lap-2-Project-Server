@@ -57,7 +57,7 @@ class Log {
                 const habitId = data.habit_id;
                 const logDate = data.log_date;
                 const habitNotes = data.habit_notes;
-                let newLogData = await db.query(`INSERT INTO logs (habit_id, log_data, habit_notes) VALUES ($1, $2, $3) RETURNING *;`, [habitId, logDate, habitNotes])
+                let newLogData = await db.query(`INSERT INTO logs (habit_id, log_date, habit_notes) VALUES ($1, $2, $3) RETURNING *;`, [habitId, logDate, habitNotes])
                 let newLog = new Log({ ...newLogData.rows[0] });
                 resolve(newLog);
             }
