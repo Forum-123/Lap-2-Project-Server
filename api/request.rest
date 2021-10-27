@@ -35,4 +35,4 @@ GET http://localhost:3000/logs
 
 ###
 
-GET http://localhost:3000/logs/1
+GET http://localhost:3000/logs/habit/1

@@ -38,6 +38,19 @@ class Log {
         });
     };
 
+    static getLogsByHabitId(id) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                let logsData = await db.query(`SELECT * FROM logs WHERE habit_id = $1;`, [ id ]);
+                let logs = logsData.rows.map(l => new Log(l));
+                resolve(logs);
+            }
+            catch(err) {
+                reject(`Logs not found for habit id ${id}.`);
+            };
+        });
+    };
+
     static create(data) {
         return new Promise(async (resolve, reject) => {
             try {
