@@ -24,10 +24,11 @@ describe('Habit', () => {
             let habitData = { id: 1, habitName: 'Test habit' }
             jest.spyOn(db, 'query')
                 .mockResolvedValueOnce({rows: [ habitData] });
-            const result = await Habit.findById(1);
+            const result = await Habit.findHabitById(1);
             expect(result).toBeInstanceOf(Habit)
         })
     });
+
 
     //find by user id 
     describe('findHabitsByUserId', () => {
@@ -36,9 +37,11 @@ describe('Habit', () => {
             jest.spyOn(db, 'query')
                 .mockResolvedValueOnce({rows: [ habitData] });
             const result = await Habit.findHabitsByUserId(3);
-            expect(result).toBeInstanceOf(Habit)
+            expect(result).toBeInstanceOf(Array)
         })
     });
+        // should this pass? does make sense for habitS by user id to be an array of habits
+
 
     describe('create', () => {
         test('it resolves with a new habit on successful db query', async () => {
