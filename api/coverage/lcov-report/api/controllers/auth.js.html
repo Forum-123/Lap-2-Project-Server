@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for tests/models/user.js</title>
+    <title>Code coverage report for api/controllers/auth.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">tests/models</a> user.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">api/controllers</a> auth.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">59.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/18</span>
+                <span class='fraction'>16/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/18</span>
+                <span class='fraction'>16/25</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,88 +94,106 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span></td><td class="text"><pre class="prettyprint lang-js">const db = require('../dbConfig');
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const express = require('express');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv').config();
 &nbsp;
-class User {
-    constructor(data){
-        this.id = data.id
-        this.name = data.name
-        this.email = data.email
-        this.password = data.password
+const User = require('../models/user');
+&nbsp;
+async function register (req, res) {
+    try {
+        let salt = await bcrypt.genSalt(10);
+        let hash = await bcrypt.hash(req.body.password, salt);
+        await User.create({...req.body, password: hash})
+<span class="cstat-no" title="statement not covered" >        res.status(201).json({msg: 'User created'})</span>
+    } catch (err) {
+        res.status(500).json({err});
     }
+};
 &nbsp;
-    static create({ name, email, password }){
-        return new Promise(async (res, rej) =&gt; {
-            try {
-                let result = await db.query(`INSERT INTO users (name, email, password)
-                                                VALUES ($1, $2, $3) RETURNING *;`,[ name, email, password ]);
-                let user = new User(result.rows[0]);
-                res(user)
-            } catch (err) {
-<span class="cstat-no" title="statement not covered" >                rej(`Error creating user: ${err}`)</span>
-            }
-        })
+async function login (req, res) {
+    try {
+        const user = await User.findByEmail(req.body.email)
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(!user){ <span class="cstat-no" title="statement not covered" >throw new Error('No user with this email'); </span>}
+        const authed = await bcrypt.compare(req.body.password, user.password)
+<span class="cstat-no" title="statement not covered" >        if (authed){</span>
+            const sendToken = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rr, token) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if(err){ <span class="cstat-no" title="statement not covered" >throw new Error('Could not create token')}</span></span>
+<span class="cstat-no" title="statement not covered" >                res.status(200).json({</span>
+                    success: true,
+                    token: 'Bearer ' + token
+                })
+            } 
+            const secret = <span class="cstat-no" title="statement not covered" >process.env.TOKEN_SECRET;</span>
+&nbsp;
+            const payload = <span class="cstat-no" title="statement not covered" >{ user: user.name, email:user.email, id:user.id}</span>
+<span class="cstat-no" title="statement not covered" >            jwt.sign(payload, secret, { expiresIn: '2h' }, sendToken)</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            throw new Error('User could not be authenticated')  </span>
+        }
+    } catch (err) {
+        res.status(401).json({ err });
     }
+};
 &nbsp;
-    static findByEmail(email){
-        return new Promise(async (res, rej) =&gt; {
-            try {
-                let result = await db.query(`SELECT * FROM users
-                                                WHERE email = $1;`,[ email ]);
-                let user = new User(result.rows[0])
-                res(user)
-            } catch (err) {
-<span class="cstat-no" title="statement not covered" >                rej(`Error retrieving user: ${err}`)</span>
-            }
-        })
-    }
-}
-&nbsp;
-module.exports = User</pre></td></tr></table></pre>
+module.exports = { register, login }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 28 2021 12:00:45 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 28 2021 12:18:31 GMT+0100 (British Summer Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

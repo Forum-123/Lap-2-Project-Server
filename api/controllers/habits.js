@@ -5,8 +5,9 @@ const Habit = require('../models/Habit');
 async function index(req, res) {
     try {
         const habits = await Habit.all;
-        console.log(habits)
-        res.json(habits);
+        console.log(`habits are : ${habits}`)
+       await res.json(habits);
+        // console.log(`res.json= ${res.json(habits)}`)
     }
     catch(err) {
         res.status(500).json(err);
