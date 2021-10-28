@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for tests/models/user.js</title>
+    <title>Code coverage report for api/models/User.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">tests/models</a> user.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">api/models</a> User.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/18</span>
+                <span class='fraction'>10/18</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/18</span>
+                <span class='fraction'>10/18</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,32 +98,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,21 +146,21 @@ class User {
             try {
                 let result = await db.query(`INSERT INTO users (name, email, password)
                                                 VALUES ($1, $2, $3) RETURNING *;`,[ name, email, password ]);
-                let user = new User(result.rows[0]);
-                res(user)
+                let user = <span class="cstat-no" title="statement not covered" >new User(result.rows[0]);</span>
+<span class="cstat-no" title="statement not covered" >                res(user)</span>
             } catch (err) {
-<span class="cstat-no" title="statement not covered" >                rej(`Error creating user: ${err}`)</span>
+                rej(`Error creating user: ${err}`)
             }
         })
     }
 &nbsp;
-    static findByEmail(email){
-        return new Promise(async (res, rej) =&gt; {
-            try {
-                let result = await db.query(`SELECT * FROM users
+<span class="fstat-no" title="function not covered" >    st</span>atic findByEmail(email){
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync (res, rej) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+                let result = <span class="cstat-no" title="statement not covered" >await db.query(`SELECT * FROM users</span>
                                                 WHERE email = $1;`,[ email ]);
-                let user = new User(result.rows[0])
-                res(user)
+                let user = <span class="cstat-no" title="statement not covered" >new User(result.rows[0])</span>
+<span class="cstat-no" title="statement not covered" >                res(user)</span>
             } catch (err) {
 <span class="cstat-no" title="statement not covered" >                rej(`Error retrieving user: ${err}`)</span>
             }
@@ -175,7 +175,7 @@ module.exports = User</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 28 2021 09:06:28 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 28 2021 10:03:26 GMT+0100 (British Summer Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
