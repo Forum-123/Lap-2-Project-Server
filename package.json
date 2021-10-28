@@ -7,10 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --setupFiles ./tests/integration/config.js --watchAll --detectOpenHandles --runInBand --verbose --coverage",
+    "test": "jest --watchAll",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "coverage": "jest --testPathPattern=/unit/ --coverage"
+    "coverage": "jest --coverage"
   },
   "author": "Katie, Chris, Forum, George and Saja",
   "license": "ISC",
