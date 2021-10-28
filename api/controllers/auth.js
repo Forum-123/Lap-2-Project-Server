@@ -30,7 +30,8 @@ async function login (req, res) {
                 })
             } 
             const secret = process.env.TOKEN_SECRET;
-            const payload = { user: user.name, email: user.email, userId: user.id }
+
+            const payload = { user: user.name, email:user.email, id:user.id}
             jwt.sign(payload, secret, { expiresIn: '2h' }, sendToken)
         } else {
             throw new Error('User could not be authenticated')  
