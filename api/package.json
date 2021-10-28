@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --setupFiles ./tests/integration/config.js --watchAll --detectOpenHandles --runInBand --verbose",
+    "test": "jest --setupFiles ./tests/integration/config.js --watchAll --detectOpenHandles --runInBand --verbose --coverage",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "coverage": "jest --testPathPattern=/unit/ --coverage"

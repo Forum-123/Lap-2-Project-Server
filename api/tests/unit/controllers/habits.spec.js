@@ -48,7 +48,7 @@ describe('habits controller', () => {
                 
             const mockReq = { params: { id: 2 } }
             await habitsController.show(mockReq, mockRes);
-            expect(mockStatus).toHaveBeenCalledWith(200);
+            expect(mockStatus).toHaveBeenCalledWith(404);
             expect(mockJson).toHaveBeenCalledWith(new Habit(testHabit));
         })
     });
