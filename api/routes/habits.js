@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const habitsController = require('../controllers/habits');
+const { checkToken } = require('../helpers/helpers');
 
-router.get('/', habitsController.index);
+router.get('/', checkToken, habitsController.index);
 
-router.get('/:id', habitsController.show);
+router.get('/:id', checkToken, habitsController.show);
 
-router.get('/user/:id', habitsController.showByUser)
+router.get('/user/:id', checkToken, habitsController.showByUser)
 
-router.post('/', habitsController.create);
+router.post('/', checkToken, habitsController.create);
 
-router.put('/:id', habitsController.update);
+router.put('/:id', checkToken, habitsController.update);
 
-router.delete('/:id', habitsController.destroy);
+router.delete('/:id', checkToken, habitsController.destroy);
 
 module.exports = router;
