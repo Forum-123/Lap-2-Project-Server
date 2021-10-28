@@ -7,9 +7,9 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 
-const authRoutes = require('./api/routes/users');
-const habitsRoutes = require('./api/routes/habits');
-const logsRoutes = require('./api/routes/logs');
+const authRoutes = require('./routes/users');
+const habitsRoutes = require('./routes/habits');
+const logsRoutes = require('./routes/logs');
 
 server.get('/', (req, res) => res.send('Welcome to Habit Tracker'));
 

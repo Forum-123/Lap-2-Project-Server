@@ -1,4 +1,4 @@
-const db = require('../dbConfig/seedDev');
+const db = require('../dbConfig');
 
 class User {
     constructor(data){
