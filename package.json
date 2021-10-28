@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "A wellbeing habit tracker",
-  "main": "server.js",
+  "main": "index.js",
   "directories": {
     "test": "tests"
   },
