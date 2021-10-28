@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">19.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/36</span>
+                <span class='fraction'>7/36</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/11</span>
+                <span class='fraction'>1/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">20.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/34</span>
+                <span class='fraction'>7/34</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -132,18 +132,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -152,14 +152,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -208,12 +208,12 @@ class Log {
         this.habitNotes = data.habit_notes;
     };
 &nbsp;
-    static get all() {
-        return new Promise(async (resolve, reject) =&gt; {
-            try {
-                let data = await db.query(`SELECT * FROM logs;`);
-                let logs = data.rows.map(l =&gt; new Log(l));
-                resolve(logs);
+<span class="fstat-no" title="function not covered" >    st</span>atic get all() {
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync (resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+                let data = <span class="cstat-no" title="statement not covered" >await db.query(`SELECT * FROM logs;`);</span>
+                let logs = <span class="cstat-no" title="statement not covered" >data.rows.map(<span class="fstat-no" title="function not covered" >l </span>=&gt; <span class="cstat-no" title="statement not covered" >new Log(l))</span>;</span>
+<span class="cstat-no" title="statement not covered" >                resolve(logs);</span>
             }
             catch (err) {
 <span class="cstat-no" title="statement not covered" >                reject('Logs not found');</span>
@@ -221,15 +221,15 @@ class Log {
         });
     };
 &nbsp;
-    static findLogById(id) {
-        return new Promise(async (resolve, reject) =&gt; {
-            try {
-                let data = await db.query(`SELECT logs.*
+<span class="fstat-no" title="function not covered" >    st</span>atic findLogById(id) {
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync (resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+                let data = <span class="cstat-no" title="statement not covered" >await db.query(`SELECT logs.*</span>
                                             FROM logs
                                             JOIN habits ON logs.habit_id = habits.id
                                             WHERE logs.id = $1;`, [id]);
-                let log = new Log(data.rows[0]);
-                resolve(log);
+                let log = <span class="cstat-no" title="statement not covered" >new Log(data.rows[0]);</span>
+<span class="cstat-no" title="statement not covered" >                resolve(log);</span>
             }
             catch (err) {
 <span class="cstat-no" title="statement not covered" >                reject(`Log ${id} not found`);</span>
@@ -274,7 +274,7 @@ module.exports = Log;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 28 2021 12:00:45 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 28 2021 15:21:25 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

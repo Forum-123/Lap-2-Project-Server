@@ -17,7 +17,7 @@ describe('logs endpoints', () => {
     it('should return all logs in the database', async () => {
         const res = await request(api)
             .get('/logs')
-            .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibTEwIiwiZW1haWwiOiJtMTBAZW1haWwuY29tIiwiaWQiOjMsImlhdCI6MTYzNTQyMTA4NiwiZXhwIjoxNjM1NDI4Mjg2fQ.cHaW6oOVNd6zzIrWlYc_XIpr4pE3zCuSM77kfmEr96c')
+            .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiamVmZiIsImVtYWlsIjoiamVmZkBlbWFpbC5jb20iLCJpZCI6MywiaWF0IjoxNjM1NDM0NzQ5fQ.zZbDD4WxZP58o4qpebHBjgvomW54JNoRdXsk5OaLjz8')
         expect(res.statusCode).toEqual(200);
         expect(res.body.length).toEqual(2);
     });
@@ -25,7 +25,7 @@ describe('logs endpoints', () => {
     it('should return a specific log', async () => {
         const res = await request(api)
             .get('/logs/1')
-            .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibTEwIiwiZW1haWwiOiJtMTBAZW1haWwuY29tIiwiaWQiOjMsImlhdCI6MTYzNTQyMTA4NiwiZXhwIjoxNjM1NDI4Mjg2fQ.cHaW6oOVNd6zzIrWlYc_XIpr4pE3zCuSM77kfmEr96c')
+            .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiamVmZiIsImVtYWlsIjoiamVmZkBlbWFpbC5jb20iLCJpZCI6MywiaWF0IjoxNjM1NDM0NzQ5fQ.zZbDD4WxZP58o4qpebHBjgvomW54JNoRdXsk5OaLjz8')
         expect(res.statusCode).toEqual(200);
         expect(res.body.habitNotes).toEqual('test notes 1');
     });
