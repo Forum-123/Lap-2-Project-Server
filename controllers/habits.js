@@ -1,4 +1,3 @@
-const { restart } = require('nodemon');
 const Habit = require('../models/Habit');
 
 //index
