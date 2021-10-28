@@ -1,4 +1,4 @@
-GET http://localhost:3000/habits
+GET https://wellbeing-habit-tracker-server.herokuapp.com/habits
 
 ###
 

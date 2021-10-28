@@ -30,3 +30,7 @@ services:
       - POSTGRES_PASSWORD=toppass
 volumes:
   dbdata:
+networks: 
+  default:
+    name: habit_tracker
+    
