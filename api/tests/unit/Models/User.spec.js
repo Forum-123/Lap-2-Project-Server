@@ -12,7 +12,7 @@ describe('User', () => {
 
     describe('create', () => {
         test('it resolves with a new user on successful db query', async () => {
-            let userData = { name: 'Test Name', emaill: 'test@email.com', password: 'testpass' }
+            let userData = { name: 'Test Name', email: 'test@email.com', password: 'testpass' }
             jest.spyOn(db, 'query')
                 .mockResolvedValueOnce({rows: [ { ...userData, id: 1 }] });
             const result = await User.create(userData);
@@ -22,7 +22,7 @@ describe('User', () => {
 
     describe('findByEmail', () => {
         test('it resolves with user on successful db query', async () => {
-            let userData = { name: 'Test Name', emaill: 'test@email.com', password: 'testpass' }
+            let userData = { name: 'Test Name', email: 'test@email.com', password: 'testpass' }
             jest.spyOn(db, 'query')
                 .mockResolvedValueOnce({rows: [ userData] });
             const result = await User.findByEmail("test@email.com");
