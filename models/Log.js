@@ -1,5 +1,4 @@
 const db = require('../dbConfig');
-const Habit = require('./Habit');
 
 class Log {
     constructor(data) {

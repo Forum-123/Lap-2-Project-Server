@@ -1,7 +1,5 @@
 const db = require('../dbConfig');
 
-const Log = require('./Log');
-
 class Habit {
     constructor(data) {
         this.id = data.id;
@@ -40,7 +38,6 @@ class Habit {
             };
         });
     };
-
 
     //create
     static create(data) {
