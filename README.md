@@ -1,3 +1,4 @@
+
 # LAP 2 Project: Habipad
 
 HabiPad is an online wellbeing habit tracker, where users can add habits they wish to track daily, weekly or monthly and regularly add their own logs when that habit is completed.
