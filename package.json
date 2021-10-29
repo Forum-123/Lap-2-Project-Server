@@ -10,7 +10,7 @@
     "test": "jest --watchAll",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "coverage": "jest --coverage"
+    "coverage": "jest --testPathPattern=/unit/ --coverage"
   },
   "author": "Katie, Chris, Forum, George and Saja",
   "license": "ISC",
