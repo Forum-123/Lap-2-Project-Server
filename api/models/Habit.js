@@ -61,7 +61,7 @@ class Habit {
             try {
                 const habitName = data.habit_name;
                 const habitFrequency = data.habit_frequency;
-                const userId = data.user_id; //need to locate userId from the client side
+                const userId = data.user_id; 
                 let newHabitData = await db.query(`INSERT INTO habits (habit_name, habit_frequency, user_id) VALUES ($1, $2, $3) RETURNING *;`, [habitName, habitFrequency, userId]);
                 let newHabit = new Habit({...newHabitData.rows[0]});
                 resolve(newHabit);
