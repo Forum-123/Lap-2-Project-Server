@@ -1,4 +1,3 @@
-const { findLogById } = require('../models/Log');
 const Log = require('../models/Log');
 
 //index
