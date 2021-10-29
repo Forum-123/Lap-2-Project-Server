@@ -1,4 +1,4 @@
-INSERT INTO users (name, email, password) VALUES ('Katie', 'katie@email.com', '$securepass'), ('Chris', 'chris@email.com', '$alsosecure');
+INSERT INTO users (name, email, password) VALUES ('Katie', 'katie@email.com', '$securepass1'), ('Chris', 'chris@email.com', '$alsosecure');
 
 INSERT INTO habits (habit_name, habit_frequency, user_id) VALUES ('Drink 2 litres of water', 'Daily', 1), ('Run 5k', 'Monthly', 2), ('Sleep 8 hours every day', 'Weekly', 1);
 
