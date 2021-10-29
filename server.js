@@ -4,9 +4,10 @@ const cors = require("cors");
 const server = express();
 server.use(cors());
 server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
 
-const authRoutes = require('./controllers/auth');
+const authRoutes = require('./routes/users');
 const habitsRoutes = require('./routes/habits');
 const logsRoutes = require('./routes/logs');
 

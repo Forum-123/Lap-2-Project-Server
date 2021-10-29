@@ -6,7 +6,7 @@ class Habit {
         this.habitName = data.habit_name;
         this.habitFrequency = data.habit_frequency;
         this.userId = data.user_id;
-    }
+    };
 
     //index
     static get all() {
@@ -16,7 +16,7 @@ class Habit {
                 let habits = data.rows.map(h => new Habit(h));
                 resolve(habits);
             }
-            catch(err) {
+            catch (err) {
                 reject(`Habits not found.`);
             };
         });
@@ -33,8 +33,21 @@ class Habit {
                 let habit = new Habit(data.rows[0]);
                 resolve(habit);
             }
-            catch(err) {
+            catch (err) {
                 reject(`Habit ${id} not found.`)
+            };
+        });
+    };
+
+    static findHabitsByUserId(id) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                let data = await db.query(`SELECT * FROM habits WHERE user_id=$1;`, [id]);
+                let habits = data.rows.map(h => new Habit(h));
+                resolve(habits);
+            }
+            catch (err) {
+                reject(`Habits not found for user ${id}.`);
             };
         });
     };
@@ -45,12 +58,12 @@ class Habit {
             try {
                 const habitName = data.habit_name;
                 const habitFrequency = data.habit_frequency;
-                const userId = data.user_id; //need to locate userId from the client side
+                const userId = data.user_id;
                 let newHabitData = await db.query(`INSERT INTO habits (habit_name, habit_frequency, user_id) VALUES ($1, $2, $3) RETURNING *;`, [habitName, habitFrequency, userId]);
-                let newHabit = new Habit({...newHabitData.rows[0]});
+                let newHabit = new Habit({ ...newHabitData.rows[0] });
                 resolve(newHabit);
             }
-            catch(err) {
+            catch (err) {
                 reject(`New habit could not be created.`);
             };
         });
@@ -75,11 +88,11 @@ class Habit {
     destroy() {
         return new Promise(async (resolve, reject) => {
             try {
-                const habit = await db.query(`DELETE FROM habits WHERE id=$1 RETURNING id;`, [ this.id ]);
+                const habit = await db.query(`DELETE FROM habits WHERE id=$1 RETURNING id;`, [this.id]);
                 const logs = await db.query(`DELETE FROM logs WHERE habit_id = $1 RETURNING habit_id;`, [this.id]);
                 resolve(`Habit ${this.id} successfully deleted`);
             }
-            catch(err) {
+            catch (err) {
                 reject(`Habit could not be deleted.`);
             };
         });

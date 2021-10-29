@@ -15,7 +15,7 @@ const resetTestDB = () => {
             reject(`Test DB could not be reset: ${err} in ${err.file}`);
         };
     });
-}
+};
 
 global.request = request;
 global.app = app;
