@@ -27,7 +27,6 @@ async function showByHabit(req, res) {
     try {
         const logs = await Log.getLogsByHabitId(parseInt(req.params.id));
         res.json(logs);
-        // console.log(res.json(logs))
     }
     catch(err) {
         res.status(404).json(err);
